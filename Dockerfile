@@ -17,9 +17,9 @@ ADD https://github.com/nongfenqi/nexus3-rundeck-plugin/releases/download/${RUNDE
 
 RUN chmod 644 system/com/nongfenqi/nexus/plugin/${RUNDECK_PLUGIN_VERSION}/nexus3-rundeck-plugin-${RUNDECK_PLUGIN_VERSION}.jar
 
-RUN sed -i '$i'"bundle.mvn\\\:com.nongfenqi.nexus.plugin/nexus3-rundeck-plugin/${RUNDECK_PLUGIN_VERSION} = mvn:com.nongfenqi.nexus.plugin/nexus3-rundeck-plugin/${RUNDECK_PLUGIN_VERSION}" etc/karaf/profile.cfg \
+RUN sed -i '$i'"bundle.mvn\\\:com.nongfenqi.nexus.plugin/nexus3-rundeck-plugin/${RUNDECK_PLUGIN_VERSION} = mvn:com.nongfenqi.nexus.plugin/nexus3-rundeck-plugin/${RUNDECK_PLUGIN_VERSION}" /opt/sonatype/nexus/etc/karaf/profile.cfg \
     && echo "reference\:file\:com/nongfenqi/nexus/plugin/"${RUNDECK_PLUGIN_VERSION}"/nexus3-rundeck-plugin-"${RUNDECK_PLUGIN_VERSION}".jar = 200" \
-    >> etc/karaf/startup.properties
+    >> /opt/sonatype/nexus/etc/karaf/startup.properties
 
 USER nexus
 
