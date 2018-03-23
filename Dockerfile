@@ -4,7 +4,7 @@ FROM sonatype/nexus3
 ARG NEXUS_VERSION=3.6.0
 ARG RUNDECK_PLUGIN_VERSION=1.0.1
 
-USER nexus
+USER root
 
 # Stop Nexus 3
 CMD ["/opt/sonatype/nexus/bin/nexus", "stop"]
