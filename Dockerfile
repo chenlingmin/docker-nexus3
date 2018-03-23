@@ -7,7 +7,7 @@ ARG RUNDECK_PLUGIN_VERSION=1.0.1
 USER nexus
 
 # Stop Nexus 3
-CMD ["bin/nexus", "stop"]
+CMD ["/opt/sonatype/nexus/bin/nexus", "stop"]
 
 # Copy and Configure Nexus Rundeck Plugin
 RUN mkdir -p system/com/nongfenqi/nexus/plugin/${RUNDECK_PLUGIN_VERSION}
@@ -24,4 +24,4 @@ RUN sed -i '$i'"bundle.mvn\\\:com.nongfenqi.nexus.plugin/nexus3-rundeck-plugin/$
 USER nexus
 
 # Start Nexus 3
-CMD ["bin/nexus", "run"]
+CMD ["/opt/sonatype/nexus/bin/nexus", "run"]
