@@ -1,7 +1,7 @@
 FROM sonatype/nexus3
 
 #Nexus 3 version to use
-ARG NEXUS_VERSION=3.6.0
+#ARG NEXUS_VERSION=3.6.0
 ARG RUNDECK_PLUGIN_VERSION=1.0.1
 
 USER root
